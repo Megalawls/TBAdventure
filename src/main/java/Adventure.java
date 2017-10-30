@@ -10,10 +10,15 @@ public class Adventure {
         System.out.println("Welcome to this Text-Based adventure");
         Area playArea = new Area(setup.getRadius(sc), setup.getDifficulty(sc));
 
-        System.out.println(playArea.getDifficulty());
-        System.out.println(playArea.getRadius());
+        Player player = new Player();
 
-
+        if (playArea.getDifficulty() == Difficulty.easy) {
+            player.setHasCompass(true);
+        } else if (playArea.getDifficulty() == Difficulty.medium) {
+            Compass compass = new Compass(playArea.getRadius());
+        } else {
+            LiterallyAFuckingBear bear = new LiterallyAFuckingBear(playArea.getRadius());
+        }
     }
 
 }

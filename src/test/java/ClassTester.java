@@ -1,4 +1,7 @@
 import org.junit.*;
+
+import java.awt.*;
+
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
@@ -23,8 +26,18 @@ public class ClassTester {
     @Test
     public void bear(){
         assertNotNull(BearyMcBearington);
-        assertEquals((BearyMcBearington.getX()<=5 && BearyMcBearington.getX()>=-5), true);
-        assertEquals((BearyMcBearington.getY()<=5 && BearyMcBearington.getY()>=-5), true);
+        assertEquals((BearyMcBearington.getLocation().x <=5 && BearyMcBearington.getLocation().x >=-5), true);
+        assertEquals((BearyMcBearington.getLocation().y <=5 && BearyMcBearington.getLocation().y >=-5), true);
+        Point beforeMove = BearyMcBearington.getLocation();
+        BearyMcBearington.move();
+        assertEquals((BearyMcBearington.getLocation().x <=5 && BearyMcBearington.getLocation().x >=-5), true);
+        assertEquals((BearyMcBearington.getLocation().y <=5 && BearyMcBearington.getLocation().y >=-5), true);
+        if(BearyMcBearington.getLocation().x != testArea.getRadius() && BearyMcBearington.getLocation().x != (0 - testArea.getRadius())){
+            //test that bears x loc has changed, and do the same for y
+        }
+        if(BearyMcBearington.getLocation().x != testArea.getRadius() && BearyMcBearington.getLocation().x != (0 - testArea.getRadius())){
+
+        }
     }
 
 }
